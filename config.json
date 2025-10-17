@@ -1,0 +1,25 @@
+{
+    "source_id": "stvg_gesetze_im_internet",
+    "parser_strategy": "gesetze_im_internet_html", 
+    "target_url": "https://www.gesetze-im-internet.de/stvg/", 
+    
+    "selectors": {
+        "main_content_container": "div[id^='bjr-Gliederung']", 
+        "paragraph_container": "div.jn", 
+        "title_selector": "span.jnnr",
+        "content_selector": "div.jnabs"
+    },
+
+    "EMBEDDING_SERVICE_TYPE": "OPENAI", 
+    "EMBEDDING_MODEL_OPENAI": "text-embedding-3-small", 
+    "EMBEDDING_MODEL_GOOGLE": "models/embedding-001",
+    
+    "DB_TABLE_NAME": "law_documents",
+    
+    "chunking_strategy": {
+        "type": "semantic_paragraph", 
+        "fallback_chunk_size": 1500,
+        "fallback_chunk_overlap": 150,
+        "semantischer_separator": "§" 
+    }
+}
